@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Layout } from 'antd';
+import Navbar from './components/Navbar';
+import BannerSlider from './components/BannerSlider';
+import ContentArea from './components/ContentArea';
+import TeamSection from './components/TeamSection';
+import Testimonials from './components/Testimonials';
+import FooterArea from './components/FooterArea';
+import Copyright from './components/Copyright';
+import 'antd/dist/antd.css';
 
-function App() {
+
+const { Header, Footer, Content } = Layout;
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+    <Layout>
+      <Header className="header">
+        <Navbar />
+      </Header>
+      <Content>        
+        <BannerSlider />
+        <ContentArea />
+        <TeamSection />
+        <Testimonials />
+      </Content>
+      <Footer>
+        <FooterArea />
+        <Copyright />
+      </Footer>
+    </Layout>
+  </div> 
+    )
+  }
 
 export default App;
